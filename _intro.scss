@@ -1,0 +1,204 @@
+.main-head {
+  width: 100%;
+  margin: 0 0 0 auto;
+  background: linear-gradient(
+    to right bottom,
+    rgb(13, 241, 135),
+    var(--color-primary-light)
+  );
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  width: 100%;
+  min-height: 10vh;
+
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex: 1 1 10rem;
+
+    margin-left: 2rem;
+
+    h1 {
+      margin: 2rem;
+      font-size: var(--text-small);
+      font-family: var(--special-font-2);
+
+      span {
+        color: rgb(233, 229, 236);
+        font-size: 2rem;
+        font-family: var(--common-font-1);
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex: 1 1 40rem;
+  }
+}
+
+.intro {
+  min-height: 80vh;
+  margin: auto;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: var(--text-large);
+    text-transform: uppercase;
+
+    padding-top: 2rem;
+
+    background: linear-gradient(
+      to right bottom,
+      var(--color-primary-dark),
+      var(--color-primary-light)
+    );
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+  }
+
+  h3 {
+    font-size: var(--text-medium);
+  }
+
+  h3:hover {
+    transition: all ease 0.5s;
+
+    background: linear-gradient(
+      to right bottom,
+      var(--color-secondary-dark),
+      var(--color-secondary-light)
+    );
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0.2);
+  }
+
+  p {
+    font-size: 2.2rem;
+    font-family: var(--common-font-2);
+  }
+}
+
+.intro-social {
+  padding: 2rem 0rem;
+  margin-top: 2rem;
+
+  a {
+    margin: 2rem;
+  }
+}
+
+.active {
+  background: gray;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.inactive:hover {
+  background: rgb(1, 252, 147);
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+
+  transition: all ease-in-out 0.3s;
+}
+
+.intro-text,
+.intro-images {
+  flex: 1 1 40rem;
+}
+
+#mac-logo {
+  animation: mac 1.5s ease infinite alternate;
+}
+
+@keyframes mac {
+  from {
+  }
+
+  to {
+  }
+}
+
+@media screen and(max-width:1332px) {
+  html {
+    font-size: 53%;
+  }
+
+  svg {
+    width: 80%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  html {
+    font-size: 45%;
+  }
+
+  svg {
+    height: 80%;
+  }
+
+  nav {
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 20rem;
+
+      ul {
+        margin: 2rem 0rem;
+      }
+    }
+  }
+
+  .main-head {
+    min-height: 15vh;
+  }
+
+  .intro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+      margin-top: 2rem;
+    }
+  }
+
+  .intro-images {
+    text-align: center;
+  }
+
+  .intro-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

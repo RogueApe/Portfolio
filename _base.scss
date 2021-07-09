@@ -1,0 +1,106 @@
+:root {
+  // COLOR VARIABLES
+  --color-header: rgb(137, 243, 243);
+  --color-primary-light: #56f5ed;
+  --color-primary-dark: #1d67f0;
+  --color-secondary-dark: rgb(248, 161, 62);
+  --color-secondary-light: rgb(255, 252, 75);
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  // SHADOW VARIABLES
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
+  --line: 1px solid var(--color-grey-light-2);
+  // GOOGLE FONTS
+  --common-font-1: "Alegreya Sans", sans-serif;
+  --common-font-2: "Titillium Web", sans-serif;
+  --special-font-1: "Vollkorn SC", serif;
+  --special-font-2: "Crimson Text", serif;
+}
+
+// GOOGLE FONTS
+// font-family: 'Alegreya Sans', sans-serif;
+// font-family: 'Titillium Web', sans-serif;
+// font-family: 'Vollkorn SC', serif;
+// font-family: 'Crimson Text', serif;
+
+// Global Settings
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  // every 1000px of WIDTH will grow 10px
+  --header-smallest: calc(1.2rem + 1vw);
+  --header-small: calc(1.5rem + 1vw);
+  --header-medium: calc(1.8rem + 1.2vw);
+  --header-large: calc(2em + 1.2vw);
+  --header-largest: calc(3.5rem + 1.2vw);
+
+  --text-small: calc(1.5rem + 1.2vw);
+  --text-medium: calc(1.8rem + 1vw);
+  --text-large: calc(2.4rem + 1.2vw);
+  --text-largest: calc(3.5rem + 1.2vw);
+  --text-huge: calc(6rem + 1.5vw);
+
+  --background-color: #414141;
+  --gray-text: #525252;
+
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: var(--header-small);
+  font-family: var(--special-font-1);
+}
+
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: var(--header-smallest);
+}
+
+h2 {
+  font-size: var(--header-large);
+}
+
+h3 {
+  font-size: var(--header-large);
+  font-weight: 300;
+  font-family: var(--common-font-2);
+}
+
+h4,
+h5 {
+  font-size: var(--header-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
