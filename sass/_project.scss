@@ -1,0 +1,21 @@
+.projects {
+  width: 90%;
+  min-height: 80vh;
+  margin: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  text-align: center;
+}
+
+.hotel-app,
+.foodographer,
+.travel,
+.rps {
+  height: 3rem;
+  width: 3rem;
+}
