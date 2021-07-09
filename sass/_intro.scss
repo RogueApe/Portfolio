@@ -3,9 +3,38 @@
   margin: 0 0 0 auto;
   background: linear-gradient(
     to right bottom,
-    rgb(13, 241, 135),
-    var(--color-primary-light)
+    var(--color-secondary-dark),
+    var(--color-secondary-light)
   );
+}
+
+.nav-bar {
+  font-weight: 600;
+  text-transform: uppercase;
+
+  a {
+    font-size: 2rem;
+  }
+}
+
+.active {
+  background: gray;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.inactive {
+  color: var(--color-white);
+
+  &:hover {
+    background: rgb(70, 70, 70);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+
+    transition: all ease-in-out 0.3s;
+  }
 }
 
 nav {
@@ -27,8 +56,13 @@ nav {
 
     margin-left: 2rem;
 
+    img {
+      height: 6rem;
+      width: 6rem;
+    }
+
     h1 {
-      margin: 2rem;
+      // margin: 2rem;
       font-size: var(--text-small);
       font-family: var(--special-font-2);
 
@@ -49,10 +83,57 @@ nav {
   }
 }
 
+// hamburger
+.hamburger {
+  position: relative;
+  display: block;
+
+  span {
+    padding: 0.2rem 2rem;
+    margin: 0.5rem 2rem;
+    display: block;
+    transition: all 0.5s ease;
+    background: var(--color-grey-dark-1);
+  }
+}
+
+// HAMBURGER
+// for JavaScript classes (Nav bar)
+.nav-open {
+  transform: translate(
+    -100%
+  ); // move the new nav page from right to left 100% width
+}
+
+.toggle .line1 {
+  transform: rotateZ(45deg) translateY(300%);
+  background: white;
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotateZ(-45deg) translateY(-300%);
+  background: white;
+}
+
+// INTRO SECTION
 .intro {
-  min-height: 80vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(../img/dev-table-2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+
+  min-height: 90vh;
   margin: auto;
-  width: 90%;
+  width: 100%;
 
   display: flex;
   justify-content: space-between;
@@ -76,17 +157,26 @@ nav {
     display: inline-block;
   }
 
+  h2,
+  h3,
+  p {
+    margin-left: 5rem;
+  }
+
   h3 {
     font-size: var(--text-medium);
   }
 
   h3:hover {
-    transition: all ease 0.5s;
+    transition: all ease 0.3s;
+    cursor: pointer;
 
     background: linear-gradient(
       to right bottom,
-      var(--color-secondary-dark),
-      var(--color-secondary-light)
+      var(--color-transform-1),
+      var(--color-transform-2),
+      var(--color-transform-3),
+      var(--color-transform-4)
     );
     -webkit-background-clip: text;
     color: rgba(0, 0, 0, 0.2);
@@ -104,64 +194,76 @@ nav {
 
   a {
     margin: 2rem;
+
+    &:first-child {
+      padding-left: 2rem;
+    }
   }
-}
-
-.active {
-  background: gray;
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 2rem;
-}
-
-.inactive:hover {
-  background: rgb(1, 252, 147);
-  color: white;
-  padding: 1rem 3rem;
-  border-radius: 2rem;
-
-  transition: all ease-in-out 0.3s;
 }
 
 .intro-text,
 .intro-images {
   flex: 1 1 40rem;
-}
 
-#mac-logo {
-  animation: mac 1.5s ease infinite alternate;
-}
+  button {
+    text-transform: uppercase;
+    font-family: var(--special-font-2);
 
-@keyframes mac {
-  from {
+    background-color: transparent;
+    color: var(--color-white);
+    padding: 3rem 6rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    animation: buttonPulse 1s infinite;
+
+    &:hover {
+      transition: all ease 0.5s;
+      box-shadow: var(--shadow-dark);
+    }
   }
+}
 
-  to {
+// ANIMATION
+@keyframes buttonPulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 }
 
+// REPONSIVE MOBILE
 @media screen and(max-width:1332px) {
   html {
     font-size: 53%;
-  }
-
-  svg {
-    width: 80%;
   }
 
   .logo {
     display: flex;
     justify-content: center;
   }
+
+  button {
+    color: var(--color-white);
+  }
 }
 
 @media screen and (max-width: 760px) {
   html {
     font-size: 45%;
-  }
-
-  svg {
-    height: 80%;
   }
 
   nav {
@@ -178,7 +280,7 @@ nav {
   }
 
   .main-head {
-    min-height: 15vh;
+    min-height: 10vh;
   }
 
   .intro-text {
@@ -186,6 +288,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 
     p {
       margin-top: 2rem;
@@ -194,11 +297,33 @@ nav {
 
   .intro-images {
     text-align: center;
+
+    button {
+      color: var(--gray-text);
+    }
   }
 
   .intro-social {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  // project section
+  .portfolio {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and(max-width: 600px) {
+  .main-head {
+    min-height: 12vh;
+  }
+
+  .intro {
+    min-height: 90vh;
   }
 }

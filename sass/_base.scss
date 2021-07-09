@@ -3,10 +3,20 @@
   --color-header: rgb(137, 243, 243);
   --color-primary-light: #56f5ed;
   --color-primary-dark: #1d67f0;
-  --color-secondary-dark: rgb(248, 161, 62);
-  --color-secondary-light: rgb(255, 252, 75);
+  // nav bar color
+  --color-secondary-dark: #d8bb9b;
+  --color-secondary-light: #d8d8d8;
+  --color-tertiary-1: #0081a4;
+  --color-tertiary-2: #ff9648;
+  --color-tertiary-3: #dbdbde;
 
-  --color-grey-dark-1: #333;
+  // SPECIAL COLOR
+  --color-transform-1: #3a586a;
+  --color-transform-2: #fc1115;
+  --color-transform-3: #fcb81e;
+  --color-transform-4: #f361e5;
+
+  --color-grey-dark-1: rgb(32, 32, 32);
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
 
@@ -48,7 +58,7 @@ html {
   --header-large: calc(2em + 1.2vw);
   --header-largest: calc(3.5rem + 1.2vw);
 
-  --text-small: calc(1.5rem + 1.2vw);
+  --text-small: calc(1.2rem + 1.2vw);
   --text-medium: calc(1.8rem + 1vw);
   --text-large: calc(2.4rem + 1.2vw);
   --text-largest: calc(3.5rem + 1.2vw);
