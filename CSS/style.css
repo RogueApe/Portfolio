@@ -1,3 +1,23 @@
+:root {
+  --color-header: rgb(137, 243, 243);
+  --color-primary-light: #56f5ed;
+  --color-primary-dark: #1d67f0;
+  --color-secondary-dark: rgb(248, 161, 62);
+  --color-secondary-light: rgb(255, 252, 75);
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+  --color-white: #fff;
+  --color-black: #000;
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+  --line: 1px solid var(--color-grey-light-2);
+  --common-font-1: "Alegreya Sans", sans-serif;
+  --common-font-2: "Titillium Web", sans-serif;
+  --special-font-1: "Vollkorn SC", serif;
+  --special-font-2: "Crimson Text", serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,5 +27,444 @@
 
 html {
   font-size: 62.5%;
+  --header-smallest: calc(1.2rem + 1vw);
+  --header-small: calc(1.5rem + 1vw);
+  --header-medium: calc(1.8rem + 1.2vw);
+  --header-large: calc(2em + 1.2vw);
+  --header-largest: calc(3.5rem + 1.2vw);
+  --text-small: calc(1.5rem + 1.2vw);
+  --text-medium: calc(1.8rem + 1vw);
+  --text-large: calc(2.4rem + 1.2vw);
+  --text-largest: calc(3.5rem + 1.2vw);
+  --text-huge: calc(6rem + 1.5vw);
+  --background-color: #414141;
+  --gray-text: #525252;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: var(--header-small);
+  font-family: var(--special-font-1);
+}
+
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: var(--header-smallest);
+}
+
+h2 {
+  font-size: var(--header-large);
+}
+
+h3 {
+  font-size: var(--header-large);
+  font-weight: 300;
+  font-family: var(--common-font-2);
+}
+
+h4,
+h5 {
+  font-size: var(--header-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-head {
+  width: 100%;
+  margin: 0 0 0 auto;
+  background: -webkit-gradient(linear, left top, right bottom, from(#0df187), to(var(--color-primary-light)));
+  background: linear-gradient(to right bottom, #0df187, var(--color-primary-light));
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  min-height: 10vh;
+}
+
+nav .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 10rem;
+          flex: 1 1 10rem;
+  margin-left: 2rem;
+}
+
+nav .logo h1 {
+  margin: 2rem;
+  font-size: var(--text-small);
+  font-family: var(--special-font-2);
+}
+
+nav .logo h1 span {
+  color: #e9e5ec;
+  font-size: 2rem;
+  font-family: var(--common-font-1);
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+.intro {
+  min-height: 80vh;
+  margin: auto;
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.intro h2 {
+  font-size: var(--text-large);
+  text-transform: uppercase;
+  padding-top: 2rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(var(--color-primary-dark)), to(var(--color-primary-light)));
+  background: linear-gradient(to right bottom, var(--color-primary-dark), var(--color-primary-light));
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.intro h3 {
+  font-size: var(--text-medium);
+}
+
+.intro h3:hover {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  background: -webkit-gradient(linear, left top, right bottom, from(var(--color-secondary-dark)), to(var(--color-secondary-light)));
+  background: linear-gradient(to right bottom, var(--color-secondary-dark), var(--color-secondary-light));
+  -webkit-background-clip: text;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.intro p {
+  font-size: 2.2rem;
+  font-family: var(--common-font-2);
+}
+
+.intro-social {
+  padding: 2rem 0rem;
+  margin-top: 2rem;
+}
+
+.intro-social a {
+  margin: 2rem;
+}
+
+.active {
+  background: gray;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+}
+
+.inactive:hover {
+  background: #01fc93;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 2rem;
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
+}
+
+.intro-text,
+.intro-images {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 40rem;
+          flex: 1 1 40rem;
+}
+
+#mac-logo {
+  -webkit-animation: mac 1.5s ease infinite alternate;
+          animation: mac 1.5s ease infinite alternate;
+}
+
+@-webkit-keyframes mac {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes mac {
+  from {
+  }
+  to {
+  }
+}
+
+@media screen and (max-width: 1332px) {
+  html {
+    font-size: 53%;
+  }
+  svg {
+    width: 80%;
+  }
+  .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  html {
+    font-size: 45%;
+  }
+  svg {
+    height: 80%;
+  }
+  nav .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 20rem;
+            flex: 1 1 20rem;
+  }
+  nav .logo ul {
+    margin: 2rem 0rem;
+  }
+  .main-head {
+    min-height: 15vh;
+  }
+  .intro-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .intro-text p {
+    margin-top: 2rem;
+  }
+  .intro-images {
+    text-align: center;
+  }
+  .intro-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.projects {
+  width: 90%;
+  min-height: 80vh;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+.hotel-app,
+.foodographer,
+.travel,
+.rps {
+  height: 3rem;
+  width: 3rem;
+}
+/*# sourceMappingURL=style.css.map */none;
+  }
+  svg {
+    width: 80%;
+  }
+  nav {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 754px) {
+  html {
+    font-size: 45%;
+  }
+  svg {
+    height: 60%;
+  }
+  .main-head {
+    width: 100%;
+  }
+  nav .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 20rem;
+            flex: 1 1 20rem;
+    margin-top: 2rem;
+  }
+  nav ul {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 60rem;
+            flex: 1 1 60rem;
+    margin: 2rem 0rem;
+  }
+  .intro-text {
+    margin-top: 5rem;
+    text-align: center;
+  }
+  .intro-images {
+    text-align: center;
+  }
+  .intro-social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .intro-social a {
+    margin: 2rem;
+  }
+  .elena,
+  .travelly {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 50rem;
+            flex: 1 1 50rem;
+  }
+  .elena img,
+  .travelly img {
+    width: 100%;
+    height: 100%;
+  }
+  form {
+    padding: 0rem;
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
