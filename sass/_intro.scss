@@ -6,6 +6,9 @@
     var(--color-secondary-dark),
     var(--color-secondary-light)
   );
+
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-bar {
@@ -18,10 +21,10 @@
 }
 
 .active {
-  background: gray;
-  color: white;
-  padding: 1rem 3rem;
+  border: 1.5px solid black;
   border-radius: 2rem;
+  color: black;
+  padding: 1rem 3rem;
 }
 
 .inactive {
@@ -51,7 +54,6 @@ nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: row;
     flex: 1 1 10rem;
 
     margin-left: 2rem;
@@ -83,42 +85,6 @@ nav {
   }
 }
 
-// hamburger
-.hamburger {
-  position: relative;
-  display: block;
-
-  span {
-    padding: 0.2rem 2rem;
-    margin: 0.5rem 2rem;
-    display: block;
-    transition: all 0.5s ease;
-    background: var(--color-grey-dark-1);
-  }
-}
-
-// HAMBURGER
-// for JavaScript classes (Nav bar)
-.nav-open {
-  transform: translate(
-    -100%
-  ); // move the new nav page from right to left 100% width
-}
-
-.toggle .line1 {
-  transform: rotateZ(45deg) translateY(300%);
-  background: white;
-}
-
-.toggle .line2 {
-  opacity: 0;
-}
-
-.toggle .line3 {
-  transform: rotateZ(-45deg) translateY(-300%);
-  background: white;
-}
-
 // INTRO SECTION
 .intro {
   background: linear-gradient(
@@ -131,7 +97,7 @@ nav {
   background-size: cover;
   object-fit: cover;
 
-  min-height: 90vh;
+  min-height: 80vh;
   margin: auto;
   width: 100%;
 
@@ -158,28 +124,13 @@ nav {
   }
 
   h2,
-  h3,
+  h4,
   p {
     margin-left: 5rem;
   }
 
-  h3 {
+  h4 {
     font-size: var(--text-medium);
-  }
-
-  h3:hover {
-    transition: all ease 0.3s;
-    cursor: pointer;
-
-    background: linear-gradient(
-      to right bottom,
-      var(--color-transform-1),
-      var(--color-transform-2),
-      var(--color-transform-3),
-      var(--color-transform-4)
-    );
-    -webkit-background-clip: text;
-    color: rgba(0, 0, 0, 0.2);
   }
 
   p {
@@ -196,8 +147,39 @@ nav {
     margin: 2rem;
 
     &:first-child {
-      padding-left: 2rem;
+      padding-left: 3rem;
     }
+  }
+}
+
+.intro-text {
+  position: relative;
+
+  h4 {
+    position: relative;
+  }
+
+  h4::before {
+    content: "\201c";
+    position: absolute;
+    z-index: 1;
+    left: -2.5rem;
+    top: -2.5rem;
+    line-height: 1;
+    font-size: 7.5rem;
+    color: var(--color-grey-light-3);
+    opacity: 0.3;
+  }
+
+  h4::after {
+    content: "\201d";
+    position: absolute;
+    z-index: 1;
+    bottom: -3.5rem;
+    line-height: 1;
+    font-size: 7.5rem;
+    color: var(--color-grey-light-3);
+    opacity: 0.3;
   }
 }
 
@@ -220,6 +202,28 @@ nav {
       transition: all ease 0.5s;
       box-shadow: var(--shadow-dark);
     }
+  }
+}
+
+footer {
+  background-color: rgb(233, 181, 85);
+  min-height: 10vh;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  h4 {
+    flex: 4 1 40rem;
+    margin-left: 2rem;
+
+    font-family: var(--common-font-2);
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 40rem;
   }
 }
 
@@ -273,14 +277,16 @@ nav {
       align-items: center;
       flex: 1 1 20rem;
 
+      min-height: 10vh;
+
       ul {
         margin: 2rem 0rem;
       }
     }
-  }
 
-  .main-head {
-    min-height: 10vh;
+    .nav-bar {
+      margin-bottom: 2rem;
+    }
   }
 
   .intro-text {
@@ -297,10 +303,6 @@ nav {
 
   .intro-images {
     text-align: center;
-
-    button {
-      color: var(--gray-text);
-    }
   }
 
   .intro-social {
@@ -320,10 +322,45 @@ nav {
 
 @media screen and(max-width: 600px) {
   .main-head {
-    min-height: 12vh;
+    min-height: 15vh;
   }
 
+  // BUG : make the nav bar top n bottom on one another
+  // nav {
+  //   display: flex;
+  //   flex-direction: row;
+  // }
+
+  // .nav-bar {
+  //   display: flex;
+  //   flex: 1 1 10rem;
+
+  //   li {
+  //     padding: 0rem 2rem;
+  //   }
+  // }
+
   .intro {
-    min-height: 90vh;
+    min-height: 75vh;
+  }
+
+  .intro-images {
+    button {
+      color: var(--color-gray-text);
+    }
+  }
+
+  footer {
+    min-height: 5vh;
+    h4 {
+      margin: 2rem;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      margin-bottom: 2rem;
+    }
   }
 }
