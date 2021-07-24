@@ -69,6 +69,11 @@
         padding-left: 2rem;
       }
 
+      img:hover {
+        transform: scale(1.3);
+        transition: all ease-in-out 0.2s;
+      }
+
       img:active {
         transform: translateY(1.2rem);
         transition: transform ease 0.3s;
