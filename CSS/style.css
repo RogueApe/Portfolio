@@ -340,12 +340,6 @@ nav ul {
           box-shadow: var(--shadow-dark);
 }
 
-.intro-text button:active,
-.intro-images button:active {
-  -webkit-transform: scaleY(-2rem);
-          transform: scaleY(-2rem);
-}
-
 footer {
   background-color: #e9b555;
   min-height: 10vh;
@@ -721,6 +715,13 @@ footer ul {
 
 .contact-wrapper .contact-social a:first-child {
   padding-left: 2rem;
+}
+
+.contact-wrapper .contact-social a img:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  -webkit-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
 }
 
 .contact-wrapper .contact-social a img:active {
