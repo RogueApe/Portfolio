@@ -108,8 +108,8 @@ a {
   margin: 0 0 0 auto;
   background: -webkit-gradient(linear, left top, right bottom, from(var(--color-secondary-dark)), to(var(--color-secondary-light)));
   background: linear-gradient(to right bottom, var(--color-secondary-dark), var(--color-secondary-light));
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#111618), color-stop(#252a2a), color-stop(#3c3f3e), color-stop(#545654), to(#6d6d6c));
-  background-image: linear-gradient(to right bottom, #111618, #252a2a, #3c3f3e, #545654, #6d6d6c);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#2b6777), to(#c8d8e4));
+  background-image: linear-gradient(to right bottom, #2b6777, #c8d8e4);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,7 +403,8 @@ nav ul {
 }
 
 footer {
-  background-color: #e9b555;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#c8d8e4), to(#2b6777));
+  background-image: linear-gradient(to right bottom, #c8d8e4, #2b6777);
   min-height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -423,6 +424,7 @@ footer h4 {
           flex: 4 1 40rem;
   margin-left: 2rem;
   font-family: var(--common-font-2);
+  font-size: 2rem;
 }
 
 @-webkit-keyframes buttonPulse {
@@ -910,8 +912,6 @@ footer h4 {
 }
 
 footer {
-  background: -webkit-gradient(linear, right bottom, left top, from(var(--color-secondary-dark)), to(var(--color-secondary-light)));
-  background: linear-gradient(to left top, var(--color-secondary-dark), var(--color-secondary-light));
   min-height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
