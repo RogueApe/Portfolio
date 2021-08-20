@@ -4,12 +4,7 @@
   display: flex;
   align-items: center;
 
-  background: linear-gradient(
-      to right bottom,
-      rgba(180, 200, 200, 0.5),
-      rgba(206, 211, 211, 0.3)
-    ),
-    url(../img/team-discussion.jpg);
+  background: linear-gradient(to right bottom, rgba(180, 200, 200, 0.5), rgba(206, 211, 211, 0.3)), url(../img/team-discussion.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -125,11 +120,11 @@
 // }
 
 footer {
-  background: linear-gradient(
-    to left top,
-    var(--color-secondary-dark),
-    var(--color-secondary-light)
-  );
+  // background: linear-gradient(
+  //   to left top,
+  //   var(--color-secondary-dark),
+  //   var(--color-secondary-light)
+  // );
   min-height: 10vh;
 
   display: flex;
